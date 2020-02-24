@@ -1,3 +1,6 @@
 Rails.application.routes.draw do
-	root: 'sessions#new'
+	root 'sessions#new'
+
+	resources :users
+	resources :sessions
 end
