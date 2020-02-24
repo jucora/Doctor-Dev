@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+	before_action :logged_in?, only: [:show]
+
 	def new 
 		@user  = User.new
 	end
@@ -20,5 +22,12 @@ class UsersController < ApplicationController
 	private
 	def user_params
 		params.require(:user).permit(:name, :password, :password_confirmation)
+	end
+
+	def logged_in?
+		if current_user == nil
+			redirect_to root_path
+			flash[:alert] = 'Please sign in first' 
+		end
 	end
 end

@@ -1,5 +1,6 @@
 class User < ApplicationRecord
 	has_secure_password
+	validates :name, presence: true, length: { minimum: 2, maximum: 10 }, uniqueness: { case_sensitive: false }
 
 	before_create :create_remember_token
 

@@ -1,9 +1,11 @@
+<h1>Create Account</h1>
 <%= form_for @user do |f| %>
-	<%= f.label :name %>
-	<%= f.text_field :name %>
-	<%= f.label :password %>
-	<%= f.text_field :password %>
-	<%= f.label :password_confirmation %>
-	<%= f.text_field :password_confirmation %>
-	<%= f.submit "Sign Up" %>
+	<%= render 'shared/error_messages', object: @user %>
+	<%= f.label :name %><br>
+	<%= f.text_field :name, class: 'form-control' %><br>
+	<%= f.label :password %><br>
+	<%= f.text_field :password, class: 'form-control' %><br>
+	<%= f.label :password_confirmation %><br>
+	<%= f.text_field :password_confirmation, class: 'form-control' %><br>
+	<%= f.submit "SIGN UP", class: 'btn button' %>
 <% end %>
