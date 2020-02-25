@@ -27,9 +27,9 @@ class UsersController < ApplicationController
   end
 
   def logged_in?
-    if current_user.nil?
-      redirect_to root_path
-      flash[:alert] = 'Please sign in first'
-    end
+    return unless current_user.nil?
+
+    redirect_to root_path
+    flash[:alert] = 'Please sign in first'
   end
 end
