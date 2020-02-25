@@ -1,0 +1,22 @@
+@import "~bootstrap/scss/bootstrap";
+
+body{
+	background-color: #3778c2;
+	color: white;
+	font-family: proxima nova bold;
+}
+
+.nav-link, .navbar-brand{
+	color: white;
+	text-decoration: none;
+	&:over{
+		color:white;
+	}
+}
+
+.button{
+	background-color: #5fb523;
+	border: 1px solid white;
+	color: white;
+	padding: 10px;
+}
