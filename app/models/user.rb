@@ -1,14 +1,14 @@
 class User < ApplicationRecord
-	has_secure_password
-	validates :name, presence: true, length: { minimum: 2, maximum: 10 }, uniqueness: { case_sensitive: false }
+  has_secure_password
+  validates :name, presence: true, length: { minimum: 2, maximum: 10 }, uniqueness: { case_sensitive: false }
 
-	before_create :create_remember_token
+  before_create :create_remember_token
 
-  def User.new_remember_token
+  def self.new_remember_token
     SecureRandom.urlsafe_base64
   end
 
-  def User.encrypt(token)
+  def self.encrypt(token)
     Digest::SHA1.hexdigest(token.to_s)
   end
 
