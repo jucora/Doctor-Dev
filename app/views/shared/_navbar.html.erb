@@ -5,7 +5,7 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
-      <% if !current_user %>
+      <% if !current_user.present? %>
         <li class="nav-item active">
           <%= link_to "Sign In", root_path, class: 'nav-link' %>
         </li>

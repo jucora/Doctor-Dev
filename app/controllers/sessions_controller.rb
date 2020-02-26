@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  before_action :session?, only: [:new]
   def new; end
 
   def create
@@ -23,5 +24,9 @@ class SessionsController < ApplicationController
 
   def session_params
     params.require(:session).permit(:name, :password)
+  end
+
+  def session?
+    redirect_to current_user if current_user.present?
   end
 end

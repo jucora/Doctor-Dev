@@ -25,11 +25,4 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :password, :password_confirmation)
   end
-
-  def logged_in?
-    return unless current_user.nil?
-
-    redirect_to root_path
-    flash[:alert] = 'Please sign in first'
-  end
 end

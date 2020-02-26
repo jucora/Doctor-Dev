@@ -10,10 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_24_202436) do
+ActiveRecord::Schema.define(version: 2020_02_25_225710) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "groups", force: :cascade do |t|
+    t.string "name"
+    t.string "icon"
+    t.bigint "transaction_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["transaction_id"], name: "index_groups_on_transaction_id"
+    t.index ["user_id"], name: "index_groups_on_user_id"
+  end
+
+  create_table "transactions", force: :cascade do |t|
+    t.integer "author_id"
+    t.string "name"
+    t.integer "amount"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "group_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
@@ -23,4 +43,6 @@ ActiveRecord::Schema.define(version: 2020_02_24_202436) do
     t.string "remember_token"
   end
 
+  add_foreign_key "groups", "transactions"
+  add_foreign_key "groups", "users"
 end

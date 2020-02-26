@@ -1,5 +1,7 @@
 class User < ApplicationRecord
   has_secure_password
+  has_many :transactions
+  has_many :groups
   validates :name, presence: true, length: { minimum: 2, maximum: 10 }, uniqueness: { case_sensitive: false }
 
   before_create :create_remember_token
