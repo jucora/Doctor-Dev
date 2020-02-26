@@ -25,10 +25,8 @@ class SessionsController < ApplicationController
   def session_params
     params.require(:session).permit(:name, :password)
   end
-  
+
   def session?
-    if current_user.present?
-      redirect_to current_user
-    end
+    redirect_to current_user if current_user.present?
   end
 end

@@ -14,10 +14,10 @@ class ApplicationController < ActionController::Base
   end
 
   def logged_in?
-    unless current_user.present?
-      redirect_to root_path
-      flash[:alert] = 'Please sign in first!'
-    end
+    return if current_user.present?
+
+    redirect_to root_path
+    flash[:alert] = 'Please sign in first!'
   end
 
   helper_method :current_user, :logged_in?

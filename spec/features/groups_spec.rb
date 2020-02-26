@@ -10,7 +10,7 @@ RSpec.feature 'Groups', type: :feature do
       fill_in 'session[password]', with: user1.password
       click_button 'Log in'
       click_link 'All groups'
-      expect(page).to have_content("Groups")
+      expect(page).to have_content('Groups')
     end
   end
 end
