@@ -7,5 +7,5 @@ Rails.application.routes.draw do
 	
 	resources :users
 	resources :sessions
-	resources :groups
+	resources :groups, only: :index
 end

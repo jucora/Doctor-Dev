@@ -9,9 +9,6 @@ body{
 .nav-link, .navbar-brand{
 	color: white;
 	text-decoration: none;
-	&:over{
-		color:white;
-	}
 }
 
 .button{
@@ -19,4 +16,20 @@ body{
 	border: 1px solid white;
 	color: white;
 	padding: 10px;
+}
+
+// user show
+
+.option_link{
+	color: white;
+	text-decoration: none;
+	&:hover{
+		color: white;
+		text-decoration: none;
+	}
+}
+
+
+hr{
+	color: white;
 }
