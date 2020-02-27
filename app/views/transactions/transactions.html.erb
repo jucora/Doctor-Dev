@@ -1,3 +1,23 @@
 <h1>My transactions</h1>
+<div>
+	<div>Amount</div>
+	<div><%= current_user.amount %></div>
+</div>
+
 <% @transactions.each do |t| %>
+	<div>
+		<div>
+			<%= image(t.group_id) %>
+		</div>
+		<div>
+			<%= t.name %>
+		</div>
+		<div>
+			$<%= t.amount %>	
+		</div>
+		<div>
+			<%= t.created_at %>	
+		</div>
+	</div><hr>
 <% end %>	
+<%= button_to "Add new", new_transaction_path, method: :get %>

@@ -1,8 +1,6 @@
 FactoryBot.define do
-  factory :group do
-    name { 'MyString' }
-    icon { 'MyString' }
-    transaction { nil }
-    user { nil }
+  factory :group1, class: Group do
+    name { 'Python' }
+    icon { 'Python Icon' }
   end
 end
