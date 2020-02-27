@@ -1,7 +1,7 @@
 <h1>New group</h1>
 <%= form_for @group, html: { multipart: true } do |f| %>
-	<span class="picture">
-		<%= f.file_field :picture %>
+	<span>
+		<%= f.file_field :icon %>
 	</span>
 	<div>
 		<%= f.label :name %>

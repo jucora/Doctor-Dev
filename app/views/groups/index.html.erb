@@ -1,9 +1,10 @@
 <h1>Groups</h1>
 <% @groups.each do |g| %>
-	<%= link_to group_path(id: g.id) do %>
-		<%= g.icon %>
-		<%= g.name %>
-		<%= g.created_at %>
+	<%= link_to group_transactions_path(id: g.id), class: 'option_link' do %>
+		<div><%= image_tag g.icon.url if g.icon? %></div>
+		<div><%= g.name %></div>
+		<div><%= g.created_at %></div>
+		<hr>
 	<% end %>	
 <% end %>
 

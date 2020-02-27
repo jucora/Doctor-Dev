@@ -1,16 +1,9 @@
-<% group_transaction(@group).each do |gt| %>
-	<div>
-		<div>
-			<%= image(@group.id) %>
-		</div>
-		<div>
-			Author: <%= author_name(gt) %>
-		</div>
-		<div>
-			$<%= gt.amount %>	
-		</div>
-		<div>
-			<%= gt.created_at %>	
-		</div>
-	</div><hr>
-<% end %>
+<div>
+	<%= image_tag @group.icon.url if @group.icon? %>	
+</div>
+<div>
+	<%= @group.name %>	
+</div>
+<div>
+	<%= find_user(@group).name %>
+</div>
