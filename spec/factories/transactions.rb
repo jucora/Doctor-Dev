@@ -1,7 +1,7 @@
 FactoryBot.define do
-  factory :transaction do
-    author_id { 1 }
-    name { 'MyString' }
-    amount { 1 }
+  factory :transaction1, class: Transaction do
+    # author_id {  }
+    name { 'Thanks for the course' }
+    amount { 20 }
   end
 end

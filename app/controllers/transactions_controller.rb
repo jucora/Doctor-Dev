@@ -1,6 +1,6 @@
 class TransactionsController < ApplicationController
   def transactions
-    @transactions = Transaction.where.not(group_id: nil)
+    @transactions = Transaction.where.not(group_id: nil).order(created_at: 'desc')
   end
 
   def external_transactions
