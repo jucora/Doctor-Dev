@@ -1,0 +1,16 @@
+<% group_transaction(@group).each do |gt| %>
+	<div>
+		<div>
+			<%= image(@group.id) %>
+		</div>
+		<div>
+			Author: <%= author_name(gt) %>
+		</div>
+		<div>
+			$<%= gt.amount %>	
+		</div>
+		<div>
+			<%= gt.created_at %>	
+		</div>
+	</div><hr>
+<% end %>
