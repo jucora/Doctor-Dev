@@ -61,7 +61,7 @@ GEM
     ast (2.4.0)
     bcrypt (3.1.13)
     bindex (0.8.1)
-    bootsnap (1.4.5)
+    bootsnap (1.4.6)
       msgpack (~> 1.0)
     builder (3.2.4)
     byebug (11.1.1)
@@ -125,11 +125,11 @@ GEM
     nokogiri (1.10.8)
       mini_portile2 (~> 2.4.0)
     parallel (1.19.1)
-    parser (2.7.0.2)
+    parser (2.7.0.3)
       ast (~> 2.4.0)
     pg (1.2.2)
     public_suffix (4.0.3)
-    puma (4.3.1)
+    puma (4.3.2)
       nio4r (~> 2.0)
     rack (2.2.2)
     rack-proxy (0.6.5)
@@ -267,7 +267,7 @@ DEPENDENCIES
   faker
   jbuilder (~> 2.7)
   listen (>= 3.0.5, < 3.2)
-  pg
+  pg (>= 0.18, < 2.0)
   puma (~> 4.1)
   rails (~> 6.0.2, >= 6.0.2.1)
   rspec-rails
