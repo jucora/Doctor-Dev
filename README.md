@@ -1,24 +1,34 @@
-# README
+# Doctor Dev
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![](images/doctodev.png)
 
-Things you may want to cover:
+# [Live version](https://doctordev-project.herokuapp.com/)
 
-* Ruby version
+This project consists of an application for handling transactions. Users can create an account, create groups and send transactions to other groups as a way of supporting the community. This is a capstone project called Group our transactions, which is part of the Microverse curriculum for the Ruby on Rails course.
 
-* System dependencies
+## Framework
 
-* Configuration
+- Ruby on Rails
 
-* Database creation
+## Database
 
-* Database initialization
+- PostgreSQL 
 
-* How to run the test suite
+## Testing tools
 
-* Services (job queues, cache servers, search engines, etc.)
+- RSpec
+- Capybara
+- FactoryBot
+- Shoulda Matchers
 
-* Deployment instructions
+## App Functionalities
 
-* ...
+- Create a new account
+- Login
+- Create transactions
+- Create groups
+- See transactions that belongs to a specific group
+
+## Author
+
+[Julian Belmonte](https://github.com/jucora)
