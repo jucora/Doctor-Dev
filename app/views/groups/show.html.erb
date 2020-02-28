@@ -1,0 +1,9 @@
+<div>
+	<%= image_tag @group.icon.url if @group.icon? %>	
+</div>
+<div>
+	<%= @group.name %>	
+</div>
+<div>
+	<%= find_user(@group).name %>
+</div>

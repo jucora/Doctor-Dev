@@ -1,0 +1,16 @@
+<h1>New group</h1>
+<%= form_for @group, html: { multipart: true } do |f| %>
+	<%= render 'shared/error_messages', object: @group %>
+	<span>
+		<%= f.file_field :icon %>
+	</span>
+	<div>
+		<%= f.label :name %>
+	</div>
+	<div>
+		<%= f.text_field :name %>
+	</div>
+	<div>
+		<%= f.submit "Create Group" %>
+	</div>
+<% end %>

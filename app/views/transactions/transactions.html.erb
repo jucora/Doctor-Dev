@@ -7,10 +7,7 @@
 <% @transactions.each do |t| %>
 	<div>
 		<div>
-			<%= image(t.group_id) %>
-		</div>
-		<div>
-			<%= t.name %>
+			<%= image_tag find_group(t.group_id).icon.url if t.group.icon? %>
 		</div>
 		<div>
 			$<%= t.amount %>	

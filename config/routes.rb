@@ -4,9 +4,10 @@ Rails.application.routes.draw do
 
 	get 'transactions', to: 'transactions#transactions'
 	get 'external_transactions', to: 'transactions#external_transactions'
-	
+	get 'group_transactions', to: 'groups#group_transactions'
+
 	resources :users
 	resources :sessions
-	resources :groups, only: :index
-	resources :transactions, only: [:new, :create]
+	resources :groups
+	resources :transactions
 end
