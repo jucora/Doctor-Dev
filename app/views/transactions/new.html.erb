@@ -1,9 +1,14 @@
-<h1>New transaction</h1>
-<%= form_for @transaction do |f| %>
-	<%= render 'shared/error_messages', object: @transaction %>
-	<div><%= f.label :amount %></div>
-	<div><%= f.number_field :amount, step: :any %></div>
- 	<%= f.select :group_id, other_group.collect { |c| [ c.name, c.id ] } %>	
- 	<div><%= f.submit "Create transaction" %></div> 
-
-<% end %>
+<div class="row d-flex justify-content-center">
+	<h1>New transaction</h1>
+</div>	
+<div class="jumbotron container">
+	<%= form_for @transaction do |f| %>
+		<%= render 'shared/error_messages', object: @transaction %>
+		<div><%= f.label :amount %></div>
+		<div><%= f.number_field :amount, step: :any %></div><br>
+		<%= f.select :group_id, other_group.collect { |c| [ c.name, c.id ] }, {}, class: "form-control" %><br>	
+	 	<div class="col-md-12 button-box">
+	 		<%= f.submit "CREATE TRANSACTION", class: 'form-control button' %>
+	 	</div> 
+	<% end %>	
+</div>

@@ -33,3 +33,39 @@ body{
 hr{
 	background-color: white;
 }
+
+// transactions
+
+.amount{
+	color: black;
+	background-color: white;
+	padding: 20px;
+}
+.transaction-container{
+	background-color: #f3f3f3;
+	padding:10px;
+}
+.transaction{
+	background-color: white;
+	margin-bottom: 10px;
+}
+.transaction-description{
+	color:black;
+}
+
+.button-box{
+	background-color: #5fb523;
+	margin-top: 50px;
+	padding: 10px;
+	.button{
+		background-color: #5fb523;
+		border: 1px solid white;
+		color: white;
+		padding: 10px;
+	}
+}
+
+//jumbotron
+.jumbotron{
+	color: black;
+}

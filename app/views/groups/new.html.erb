@@ -1,16 +1,20 @@
-<h1>New group</h1>
-<%= form_for @group, html: { multipart: true } do |f| %>
-	<%= render 'shared/error_messages', object: @group %>
-	<span>
-		<%= f.file_field :icon %>
-	</span>
-	<div>
-		<%= f.label :name %>
-	</div>
-	<div>
-		<%= f.text_field :name %>
-	</div>
-	<div>
-		<%= f.submit "Create Group" %>
-	</div>
-<% end %>
+<div class="row d-flex justify-content-center">
+	<h1>New group</h1>
+</div>
+<div class="jumbotron container">	
+	<%= form_for @group, html: { multipart: true } do |f| %>
+		<%= render 'shared/error_messages', object: @group %>
+		<div>
+			<%= f.file_field :icon %>
+		</div><br>
+		<div>
+			<%= f.label :name %>
+		</div>
+		<div>
+			<%= f.text_field :name %>
+		</div>
+		<div class="col-md-12 button-box">
+			<%= f.submit "CREATE GROUP", class: 'form-control button' %>
+		</div>
+	<% end %>
+</div>

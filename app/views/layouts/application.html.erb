@@ -11,11 +11,10 @@
 
   <body>
     <%= render 'shared/navbar' %>
-    <% flash.each do |key, message| %>
-      <%= message %>
-    <% end %>
-    <div class="container">
-      <%  %>
+    <div class="">
+      <% flash.each do |key, message| %>
+        <h2><%= message %></h2>
+      <% end %>
       <%= yield %>
     </div>
   </body>
