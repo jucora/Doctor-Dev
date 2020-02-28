@@ -4,6 +4,6 @@ module GroupsHelper
   end
 
   def other_group
-  	Group.where.not(user_id: current_user.id)
+    Group.where.not(user_id: current_user.id)
   end
 end
