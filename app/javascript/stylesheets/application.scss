@@ -1,0 +1,72 @@
+@import "~bootstrap/scss/bootstrap";
+
+body{
+	background-color: #3778c2;
+	color: white;
+	font-family: proxima nova bold;
+	padding: 30px;
+}
+
+.nav-link, .navbar-brand{
+	color: white;
+	text-decoration: none;
+}
+
+.button{
+	background-color: #5fb523;
+	border: 1px solid white;
+	color: white;
+	padding: 10px;
+}
+
+// user show
+
+.option_link{
+	color: white;
+	text-decoration: none;
+	&:hover{
+		color: white;
+		text-decoration: none;
+	}
+}
+
+
+hr{
+	background-color: white;
+}
+
+// transactions
+
+.amount{
+	color: black;
+	background-color: white;
+	padding: 20px;
+}
+.transaction-container{
+	background-color: #f3f3f3;
+	padding:10px;
+}
+.transaction{
+	background-color: white;
+	margin-bottom: 10px;
+}
+.transaction-description{
+	color:black;
+}
+
+.button-box{
+	background-color: #5fb523;
+	margin-top: 50px;
+	padding: 10px;
+	.button{
+		background-color: #5fb523;
+		border: 1px solid white;
+		color: white;
+		padding: 10px;
+	}
+}
+
+//jumbotron
+.jumbotron{
+	color: black;
+}

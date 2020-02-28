@@ -1,3 +1,13 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+	root 'sessions#new'
+	delete 'logout', to: 'sessions#delete'
+
+	get 'transactions', to: 'transactions#transactions'
+	get 'external_transactions', to: 'transactions#external_transactions'
+	get 'group_transactions', to: 'groups#group_transactions'
+
+	resources :users
+	resources :sessions
+	resources :groups
+	resources :transactions
 end

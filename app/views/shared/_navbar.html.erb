@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg container">
+  <%= link_to "DOCTOR DEV", root_path, class: 'navbar-brand nav-link' %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <% if !current_user.present? %>
+        <li class="nav-item active">
+          <%= link_to "Sign In", root_path, class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Sign Up", new_user_path, class: 'nav-link' %>
+        </li>
+      <% else %>  
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Account
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <%= link_to "Log out", logout_path, method: :delete, class: 'dropdown-item' %>
+          </div>
+        </li>
+      <% end %>  
+    </ul>
+  </div>
+</nav>

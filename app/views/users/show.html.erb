@@ -1,0 +1,21 @@
+<div class="row">
+	<div class="col-md-12 d-flex justify-content-center">
+		<%= image_tag ("/assets/user.png"), class: "img-responsive", size: '150x150'%>
+	</div>
+</div>
+<br>
+<div class="row">
+	<h2 class="col-md-12 d-flex justify-content-center"><%= @user.name %></h2>	
+</div>
+<br><br>
+<div class="row">
+	<h4 class="col-md-12 d-flex justify-content-center"><%= link_to "All my transactions", transactions_path, class: 'option_link' %></h4>
+</div><hr>
+<br>
+<div class="row">
+	<h4 class="col-md-12 d-flex justify-content-center"><%= link_to "All my external transactions", external_transactions_path, class: 'option_link' %></h4>
+</div><hr>
+<br>
+<div class="row">
+	<h4 class="col-md-12 d-flex justify-content-center"><%= link_to "All groups", groups_path,class: 'option_link'  %></h4>
+</div>

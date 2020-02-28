@@ -1,0 +1,22 @@
+<div class="row d-flex justify-content-center">
+	<h1>Groups</h1>	
+</div>
+<% @groups.each do |g| %>
+	<div class="col-md-12">
+		<%= link_to group_transactions_path(id: g.id), class: 'option_link' do %>
+			<div class="col-md-12 d-flex justify-content-center">
+				<%= image_tag g.icon.url if g.icon? %>
+			</div>
+			<div class="col-md-12 d-flex justify-content-center">
+				<%= g.name %>
+			</div>	
+			<div class="col-md-12 d-flex justify-content-center">
+				<%= g.created_at %>
+			</div>
+			<hr>
+		<% end %>	
+	</div>
+<% end %>
+<div class="col-md-12 button-box">
+	<%= button_to "CREATE NEW", new_group_path, method: :get, class: 'btn-block button' %>
+</div>	
