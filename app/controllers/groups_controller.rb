@@ -1,4 +1,5 @@
 class GroupsController < ApplicationController
+	before_action :logged_in?
   def index
     @groups = Group.all
   end

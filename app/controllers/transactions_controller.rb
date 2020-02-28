@@ -1,4 +1,5 @@
 class TransactionsController < ApplicationController
+  before_action :logged_in?
   def new
   	@transaction = Transaction.new
   end
@@ -7,18 +8,17 @@ class TransactionsController < ApplicationController
   	@transaction = Transaction.create(transaction_params)
   	@transaction.author_id = current_user.id
   	
-  	if current_user.amount >= @transaction.amount
-  		if @transaction.save 
-  			current_user.update_attributes(amount: current_user.amount - @transaction.amount)
+    if @transaction.save 
+      if current_user.amount >= @transaction.amount
+  		  current_user.update_attributes(amount: current_user.amount - @transaction.amount)
   			flash[:notice] = 'The transaction was created!'
   			redirect_to @transaction
   		else
-  			flash[:alert] = 'Something went wrong!'
-  			render :new
+        flash[:alert] = "You don't have enough balance!"
+        redirect_to new_transaction_path
   		end
   	else
-  		flash[:alert] = "You don't have balance!"
-  		render :new
+      render :new
   	end
   end
 

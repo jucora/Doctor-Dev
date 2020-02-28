@@ -1,5 +1,6 @@
 <h1>New transaction</h1>
 <%= form_for @transaction do |f| %>
+	<%= render 'shared/error_messages', object: @transaction %>
 	<div><%= f.label :amount %></div>
 	<div><%= f.number_field :amount, step: :any %></div>
  	<%= f.select :group_id, other_group.collect { |c| [ c.name, c.id ] } %>	
