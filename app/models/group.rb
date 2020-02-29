@@ -1,6 +1,6 @@
 class Group < ApplicationRecord
   belongs_to :user
-  has_many :transactions
+  has_many :transactions, dependent: :destroy
   mount_uploader :icon, PictureUploader
 
   validates :name, presence: true, uniqueness: { case_sensitive: false }
