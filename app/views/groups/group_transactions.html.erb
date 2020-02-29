@@ -3,7 +3,7 @@
 </div>
 <div class="row transaction-container">	
 	<% group_transaction(@group).each do |gt| %>
-		<di class="col-md-12 transaction d-flex justify-content-center"v>
+		<div class="col-md-12 transaction d-flex justify-content-center"v>
 			<div class="col-md-4 text-left">
 				<%= image_tag find_group(gt.group_id).icon.url if gt.group.icon? %>
 			</div>
@@ -13,9 +13,6 @@
 			</div>
 			<div class="col-md-4 transaction-description text-right">
 				$<%= gt.amount %>	
-			</div>
-			<div>
-				<%= gt.created_at %>	
 			</div>
 		</div><hr>
 	<% end %>

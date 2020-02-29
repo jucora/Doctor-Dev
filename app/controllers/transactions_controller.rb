@@ -1,5 +1,6 @@
 class TransactionsController < ApplicationController
   before_action :logged_in?
+  before_action :balance, only: :create
   def new
     @transaction = Transaction.new
   end
@@ -9,14 +10,9 @@ class TransactionsController < ApplicationController
     @transaction.author_id = current_user.id
 
     if @transaction.save
-      if current_user.amount >= @transaction.amount
-        current_user.update_attributes(amount: current_user.amount - @transaction.amount)
-        flash[:notice] = 'The transaction was created!'
-        redirect_to @transaction
-      else
-        flash[:alert] = "You don't have enough balance!"
-        redirect_to new_transaction_path
-      end
+      current_user.update_attributes(amount: current_user.amount - @transaction.amount)
+      flash[:notice] = 'The transaction was created!'
+      redirect_to @transaction
     else
       render :new
     end
@@ -38,5 +34,12 @@ class TransactionsController < ApplicationController
 
   def transaction_params
     params.require(:transaction).permit(:amount, :group_id)
+  end
+
+  def balance
+    unless current_user.amount >= transaction_params[:amount].to_f
+      flash[:alert] = "You don't have enough balance!"
+      redirect_to new_transaction_path
+    end
   end
 end
