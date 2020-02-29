@@ -2,7 +2,7 @@
 
 ![](images/doctodev.png)
 
-# [Live version](https://doctordev-project.herokuapp.com/)
+# [Live version](https://masterdev-project.herokuapp.com/)
 
 This project consists of an application for handling transactions. Users can create an account, create groups and send transactions to other groups as a way of supporting the community. This is a capstone project called Group our transactions, which is part of the Microverse curriculum for the Ruby on Rails course.
 
