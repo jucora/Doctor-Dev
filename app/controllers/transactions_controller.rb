@@ -5,10 +5,10 @@ class TransactionsController < ApplicationController
   def index
     if params[:transaction_type] == 'transaction'
       @transactions = current_user.transactions.with_group
-      @title = 'Transactions'
+      @title = 'All my transactions'
     elsif params[:transaction_type] == 'external_transaction'
       @transactions = current_user.transactions.without_group
-      @title = 'External Transactions'
+      @title = 'All my external transactions'
     end
   end
 
