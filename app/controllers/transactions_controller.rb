@@ -1,6 +1,11 @@
 class TransactionsController < ApplicationController
   before_action :logged_in?
   before_action :balance, only: :create
+  
+  def index
+    @current_user_transactions = current_user.transactions.with_group
+  end
+
   def new
     @transaction = Transaction.new
   end
@@ -20,10 +25,6 @@ class TransactionsController < ApplicationController
 
   def show
     @transaction = Transaction.find(params[:id])
-  end
-
-  def transactions
-    @transactions = Transaction.where.not(group_id: nil).where(author_id: current_user.id).order(created_at: 'desc')
   end
 
   def external_transactions

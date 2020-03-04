@@ -9,7 +9,7 @@
 	<div class="col-md-6 col-sm-6 d-flex justify-content-end"><%= current_user.amount %></div>
 </div>
 <div class="row transaction-container">
-	<% @transactions.each do |t| %>
+	<% @current_user_transactions.each do |t| %>
 		<div class="col-md-12 transaction d-flex justify-content-center">
 			<div class="col-md-4 text-left">
 				<%= image_tag find_group(t.group_id).icon.url if t.group.icon? %>
