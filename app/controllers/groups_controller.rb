@@ -1,7 +1,7 @@
 class GroupsController < ApplicationController
   before_action :logged_in?
   def index
-    @groups = Group.all
+    @groups = Group.alphabetical_order
   end
 
   def new

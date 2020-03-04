@@ -6,4 +6,6 @@ class Group < ApplicationRecord
   validates :name, presence: true, uniqueness: { case_sensitive: false }
   validates :icon, presence: true
   validates :user_id, presence: true
+
+  scope :alphabetical_order, -> { order(name: :asc) }
 end
