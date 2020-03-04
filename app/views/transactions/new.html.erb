@@ -6,7 +6,7 @@
 		<%= render 'shared/error_messages', object: @transaction %>
 		<div><%= f.label :amount %></div>
 		<div><%= f.number_field :amount, step: :any %></div><br>
-		<%= f.select :group_id, other_group.collect { |c| [ c.name, c.id ] }, {}, class: "form-control" %><br>	
+		<%= f.select :group_id, Group.alphabetical_order.collect { |c| [ c.name, c.id ] }, {}, class: "form-control" %><br>	
 	 	<div class="col-md-12 button-box">
 	 		<%= f.submit "CREATE TRANSACTION", class: 'form-control button' %>
 	 	</div> 
