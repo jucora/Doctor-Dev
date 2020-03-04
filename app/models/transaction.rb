@@ -7,4 +7,5 @@ class Transaction < ApplicationRecord
   validates :group_id, presence: true
 
   scope :with_group, -> { where.not(group_id: nil).order(created_at: :desc) }
+  scope :without_group, -> { where(group_id: nil).order(created_at: :desc) }
 end

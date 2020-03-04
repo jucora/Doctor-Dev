@@ -3,7 +3,13 @@ class TransactionsController < ApplicationController
   before_action :balance, only: :create
   
   def index
-    @current_user_transactions = current_user.transactions.with_group
+    if params[:transaction_type] == 'transaction'
+      @transactions = current_user.transactions.with_group
+      @title = 'Transactions'
+    elsif params[:transaction_type] == 'external_transaction'
+      @transactions = current_user.transactions.without_group
+      @title = 'External Transactions'
+    end
   end
 
   def new
@@ -25,10 +31,6 @@ class TransactionsController < ApplicationController
 
   def show
     @transaction = Transaction.find(params[:id])
-  end
-
-  def external_transactions
-    @external_transactions = Transaction.where(group_id: nil)
   end
 
   private

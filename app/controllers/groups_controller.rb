@@ -24,10 +24,6 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
   end
 
-  def group_transactions
-    @group = Group.find(params[:id])
-  end
-
   private
 
   def group_params
