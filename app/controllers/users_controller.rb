@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :logged_in?, only: [:show]
+  before_action :destroy_transaction, only: [:show]
 
   def new
     @user = User.new
