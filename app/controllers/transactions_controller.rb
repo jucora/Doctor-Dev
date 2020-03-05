@@ -45,9 +45,7 @@ class TransactionsController < ApplicationController
   end
 
   def transaction_type
-    unless cookies[:transaction_type].present?
-      cookies[:transaction_type] = params[:type]
-    end
+    cookies[:transaction_type] = params[:type] unless cookies[:transaction_type].present?
     @type = cookies[:transaction_type]
   end
 end

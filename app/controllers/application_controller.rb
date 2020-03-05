@@ -21,9 +21,7 @@ class ApplicationController < ActionController::Base
   end
 
   def destroy_transaction
-    if cookies[:transaction_type]
-      cookies.delete(:transaction_type)
-    end
+    cookies.delete(:transaction_type) if cookies[:transaction_type]
   end
 
   helper_method :current_user, :logged_in?
