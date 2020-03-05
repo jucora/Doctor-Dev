@@ -11,25 +11,18 @@
 <div class="row transaction-container">
 	<% @transactions.each do |t| %>
 			<div class="col-md-12 transaction d-flex justify-content-center">
-				<% if t.group_id != 0 %>
+				<% if t.group_id != nil %>
 					<div class="col-md-4 text-left">
 						<%= image_tag find_group(t.group_id).icon.url if t.group.icon? %>
 					</div>
-					<div class="col-md-4 transaction-description text-center">
-						<%= find_group(t.group_id).name %><br>
-						<%= t.created_at %>
-					</div>
-					<div class="col-md-4 amount text-right">
-						$<%= t.amount %>	
-					</div>
-				<% else %>
-						<div class="col-md-4 transaction-description text-center">
-						<%= t.created_at %>
-					</div>
-					<div class="col-md-4 amount text-right">
-						$<%= t.amount %>	
-					</div>
 				<% end %>
+				<div class="col-md-4 transaction-description text-center">
+						<%= t.name %><br>	
+						<%= t.created_at %>
+					</div>
+					<div class="col-md-4 amount text-right">
+						$<%= t.amount %>	
+					</div>
 			</div><br>
 	<% end %>
 	<div class="col-md-12 button-box">

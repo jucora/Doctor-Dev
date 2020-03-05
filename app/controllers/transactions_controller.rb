@@ -16,8 +16,7 @@ class TransactionsController < ApplicationController
   end
 
   def create
-    @transaction = Transaction.create(transaction_params)
-    @transaction.author_id = current_user.id
+    @transaction = current_user.transactions.build(transaction_params)
 
     if @transaction.save
       current_user.update_attributes(amount: current_user.amount - @transaction.amount)
@@ -35,7 +34,7 @@ class TransactionsController < ApplicationController
   private
 
   def transaction_params
-    params.require(:transaction).permit(:amount, :group_id)
+    params.require(:transaction).permit(:amount, :group_id, :name)
   end
 
   def balance
