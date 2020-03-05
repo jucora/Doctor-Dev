@@ -8,5 +8,4 @@ class Transaction < ApplicationRecord
 
   scope :with_group, -> { where.not(group_id: nil).order(created_at: :desc) }
   scope :without_group, -> { where(group_id: nil).order(created_at: :desc) }
-
 end

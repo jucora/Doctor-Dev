@@ -1,8 +1,8 @@
 class TransactionsController < ApplicationController
   before_action :logged_in?
   before_action :balance, only: :create
-  before_action :transaction_type, only:[:index,:new]
-  
+  before_action :transaction_type, only: %i[index new]
+
   def index
     if @type == 'group_transaction'
       @transactions = current_user.transactions.with_group
