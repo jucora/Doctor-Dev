@@ -1,14 +1,13 @@
 class TransactionsController < ApplicationController
   before_action :logged_in?
   before_action :balance, only: :create
+  before_action :transaction_type, only:[:index,:new]
   
   def index
-    if params[:transaction_type] == 'transaction'
+    if @type == 'group_transaction'
       @transactions = current_user.transactions.with_group
-      @title = 'All my transactions'
-    elsif params[:transaction_type] == 'external_transaction'
+    elsif @type == 'external_transaction'
       @transactions = current_user.transactions.without_group
-      @title = 'All my external transactions'
     end
   end
 
@@ -44,5 +43,9 @@ class TransactionsController < ApplicationController
       flash[:alert] = "You don't have enough balance!"
       redirect_to new_transaction_path
     end
+  end
+
+  def transaction_type
+    @type = params[:type]
   end
 end

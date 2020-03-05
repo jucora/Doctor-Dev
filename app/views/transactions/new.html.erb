@@ -6,7 +6,11 @@
 		<%= render 'shared/error_messages', object: @transaction %>
 		<div><%= f.label :amount %></div>
 		<div><%= f.number_field :amount, step: :any %></div><br>
-		<%= f.select :group_id, Group.alphabetical_order.collect { |c| [ c.name, c.id ] }, {}, class: "form-control" %><br>	
+		<% if @type == 'group_transaction' %>
+			<%= f.select :group_id, Group.alphabetical_order.collect { |c| [ c.name, c.id ] }, {}, class: "form-control" %><br>
+		<% else %>
+			<%= f.select :group_id, Transaction.external_options.collect { |c| [ c, 'nil' ] }, {}, class: "form-control" %><br>
+		<% end %>
 	 	<div class="col-md-12 button-box">
 	 		<%= f.submit "CREATE TRANSACTION", class: 'form-control button' %>
 	 	</div> 
