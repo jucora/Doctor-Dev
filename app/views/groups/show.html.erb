@@ -3,7 +3,7 @@
 		<h1>Group transactions</h1>
 	</div>
 	<div class="row transaction-container">	
-		<% @group.transactions.includes(:user).each do |gt| %>
+		<% @group.transactions.each do |gt| %>
 			<div class="col-md-12 transaction d-flex justify-content-center"v>
 				<div class="col-md-4 text-left">
 					<%= image_tag gt.group.icon.url if gt.group.icon? %>

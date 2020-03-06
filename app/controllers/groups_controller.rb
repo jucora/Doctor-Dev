@@ -21,7 +21,7 @@ class GroupsController < ApplicationController
   end
 
   def show
-    @group = Group.includes(:transactions).find(params[:id])
+    @group = Group.includes(transactions: :user).find(params[:id])
   end
 
   private
