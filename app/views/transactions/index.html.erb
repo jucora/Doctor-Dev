@@ -13,7 +13,7 @@
 			<div class="col-md-12 transaction d-flex justify-content-center">
 				<% if t.group_id != nil %>
 					<div class="col-md-4 text-left">
-						<%= image_tag find_group(t.group_id).icon.url if t.group.icon? %>
+						<%= image_tag t.group.icon.url %>
 					</div>
 				<% end %>
 				<div class="col-md-4 transaction-description text-center">

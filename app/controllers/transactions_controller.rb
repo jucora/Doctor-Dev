@@ -5,7 +5,7 @@ class TransactionsController < ApplicationController
 
   def index
     if @type == 'group_transaction'
-      @transactions = current_user.transactions.with_group
+      @transactions = current_user.transactions.includes(:group).with_group
     elsif @type == 'external_transaction'
       @transactions = current_user.transactions.without_group
     end
