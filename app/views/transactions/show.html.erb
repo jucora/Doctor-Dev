@@ -1,3 +1,3 @@
-<%= author_name(@transaction) %>
+<%= @transaction.user.name %>
 <%= @transaction.amount %>
-<%= find_group(@transaction.group_id).name if @transaction.group_id != nil %>
+<%= @transaction.group.name if @transaction.group_id != nil %>
