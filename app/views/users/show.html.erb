@@ -1,6 +1,6 @@
 <div class="row">
 	<div class="col-md-12 d-flex justify-content-center">
-		<%= image_tag ("/assets/user.png"), class: "img-responsive", size: '150x150'%>
+		<%= image_tag ("https://www.dropbox.com/s/ke4uf6ikoil71td/user.png?raw=1"), class: "img-responsive", size: '150x150'%>
 	</div>
 </div>
 <br>
@@ -9,11 +9,11 @@
 </div>
 <br><br>
 <div class="row">
-	<h4 class="col-md-12 d-flex justify-content-center"><%= link_to "All my transactions", transactions_path, class: 'option_link' %></h4>
+	<h4 class="col-md-12 d-flex justify-content-center"><%= link_to "All my transactions", transactions_path(type: :group_transaction), class: 'option_link' %></h4>
 </div><hr>
 <br>
 <div class="row">
-	<h4 class="col-md-12 d-flex justify-content-center"><%= link_to "All my external transactions", external_transactions_path, class: 'option_link' %></h4>
+	<h4 class="col-md-12 d-flex justify-content-center"><%= link_to "All my external transactions", transactions_path(type: :external_transaction), class: 'option_link' %></h4>
 </div><hr>
 <br>
 <div class="row">
