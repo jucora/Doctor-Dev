@@ -1,0 +1,34 @@
+<div class="row d-flex justify-content-center">
+	<h1><%= transaction_title(@type) %></h1>	
+</div>
+<div class="row d-flex justify-content-center">
+	<h6>Most recent</h6>	
+</div>
+<div class="row amount">
+	<div class="col-md-6 col-sm-6 d-flex justify-content-start">Balance</div>
+	<div class="col-md-6 col-sm-6 d-flex justify-content-end"><%= current_user.amount %></div>
+</div>
+<div class="row transaction-container">
+	<% @transactions.each do |t| %>
+			<div class="col-md-12 transaction d-flex justify-content-center">
+				<% if t.group_id != nil %>
+					<div class="col-md-4 text-left">
+						<%= image_tag t.group.icon.url %>
+					</div>
+				<% end %>
+				<div class="col-md-4 transaction-description text-center">
+						<%= t.name %><br>	
+						<%= t.created_at %>
+					</div>
+					<div class="col-md-4 amount text-right">
+						$<%= t.amount %>	
+					</div>
+			</div><br>
+	<% end %>
+	<div class="col-md-12 button-box">
+		<%= button_to "ADD NEW", new_transaction_path, method: :get, class: 'btn-block button' %>
+	</div>	
+</div>
+
+
+

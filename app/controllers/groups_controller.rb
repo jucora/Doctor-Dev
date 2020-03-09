@@ -1,7 +1,7 @@
 class GroupsController < ApplicationController
   before_action :logged_in?
   def index
-    @groups = Group.all
+    @groups = Group.alphabetical_order
   end
 
   def new
@@ -21,11 +21,7 @@ class GroupsController < ApplicationController
   end
 
   def show
-    @group = Group.find(params[:id])
-  end
-
-  def group_transactions
-    @group = Group.find(params[:id])
+    @group = Group.includes(transactions: :user).find(params[:id])
   end
 
   private
