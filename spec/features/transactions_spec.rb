@@ -10,7 +10,7 @@ RSpec.feature 'Transactions', type: :feature do
       fill_in 'session[password]', with: user1.password
       click_button 'Log in'
       click_link 'All my transactions'
-      expect(page).to have_content('My transactions')
+      expect(page).to have_content('All my transactions')
     end
     scenario 'Select all external transactions' do
       visit new_session_path
@@ -18,7 +18,7 @@ RSpec.feature 'Transactions', type: :feature do
       fill_in 'session[password]', with: user1.password
       click_button 'Log in'
       click_link 'All my external transactions'
-      expect(page).to have_content('My external transactions')
+      expect(page).to have_content('All my external transactions')
     end
   end
 end

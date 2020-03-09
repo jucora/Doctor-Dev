@@ -1,13 +1,22 @@
 class TransactionsController < ApplicationController
   before_action :logged_in?
   before_action :balance, only: :create
+  before_action :transaction_type, only: %i[index new]
+
+  def index
+    if @type == 'group_transaction'
+      @transactions = current_user.transactions.includes(:group).with_group
+    elsif @type == 'external_transaction'
+      @transactions = current_user.transactions.without_group
+    end
+  end
+
   def new
     @transaction = Transaction.new
   end
 
   def create
-    @transaction = Transaction.create(transaction_params)
-    @transaction.author_id = current_user.id
+    @transaction = current_user.transactions.build(transaction_params)
 
     if @transaction.save
       current_user.update_attributes(amount: current_user.amount - @transaction.amount)
@@ -22,18 +31,10 @@ class TransactionsController < ApplicationController
     @transaction = Transaction.find(params[:id])
   end
 
-  def transactions
-    @transactions = Transaction.where.not(group_id: nil).where(author_id: current_user.id).order(created_at: 'desc')
-  end
-
-  def external_transactions
-    @external_transactions = Transaction.where(group_id: nil)
-  end
-
   private
 
   def transaction_params
-    params.require(:transaction).permit(:amount, :group_id)
+    params.require(:transaction).permit(:amount, :group_id, :name)
   end
 
   def balance
@@ -41,5 +42,10 @@ class TransactionsController < ApplicationController
       flash[:alert] = "You don't have enough balance!"
       redirect_to new_transaction_path
     end
+  end
+
+  def transaction_type
+    cookies[:transaction_type] = params[:type] unless cookies[:transaction_type].present?
+    @type = cookies[:transaction_type]
   end
 end

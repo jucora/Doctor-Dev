@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user
-    @current_user ||= User.find_by_remember_token!(cookies[:remember_token]) if cookies[:remember_token]
+    @current_user ||= User.find_by_remember_token(cookies[:remember_token]) if cookies[:remember_token]
   end
 
   def sign_out
@@ -18,6 +18,10 @@ class ApplicationController < ActionController::Base
 
     redirect_to root_path
     flash[:alert] = 'Please sign in first!'
+  end
+
+  def destroy_transaction
+    cookies.delete(:transaction_type) if cookies[:transaction_type]
   end
 
   helper_method :current_user, :logged_in?

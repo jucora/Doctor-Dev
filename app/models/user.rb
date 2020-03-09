@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   has_secure_password
-  has_many :transactions, dependent: :destroy, foreign_key: 'author_id'
+  has_many :transactions, foreign_key: 'author_id', dependent: :destroy
   has_many :groups, dependent: :destroy
   validates :name, presence: true, length: { minimum: 2, maximum: 10 }, uniqueness: { case_sensitive: false }
 
