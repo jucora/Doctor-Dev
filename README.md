@@ -1,34 +1,38 @@
 # Doctor Dev
 
-![](images/doctodev.png)
+<p align="center">
+  <img src="images/doctodev.png">
+</p>
 
-# [Click here for live version](https://masterdev-project.herokuapp.com/)
+# :globe_with_meridians: [Live Demo](https://masterdev-project.herokuapp.com/)
 
 ## Account to test in live version
 
 - Username: test
 - Password: password
 
-## Description
+## :pencil: Description
 
-This project consists of an application for handling transactions. Users can create an account, create groups and send transactions to other groups as a way of supporting the community. This is a capstone project called Group our transactions, which is part of the Microverse curriculum for the Ruby on Rails course.
+This project consists of an application for handling transactions. Users can create an account, create groups, and send transactions to other groups as a way of supporting the community. This is a capstone project called Group our transactions, which is part of the Microverse curriculum for the Ruby on Rails course.
 
-## Framework
+## How to run the game in a local environment
+
+1. You can clone the repo by running the next command in your command line: <p><code> git clone https://github.com/jucora/Doctor-Dev.git </code></p>
+
+2. Next, cd into the project's folder: <p><code>cd Doctor-Dev</code></p>
+
+3. Finally, run the command <p><code>rails start</code></p>
+
+## :computer: Languages and Tools
 
 - Ruby on Rails
-
-## Database
-
 - PostgreSQL 
-
-## Testing tools
-
 - RSpec
 - Capybara
 - FactoryBot
 - Shoulda Matchers
 
-## App Functionalities
+## :point_right: Functionalities
 
 - Create a new account
 - Login
@@ -38,4 +42,14 @@ This project consists of an application for handling transactions. Users can cre
 
 ## Author
 
+:man: Julian Belmonte
+
 [Julian Belmonte](https://github.com/jucora)
+
+## Report Issues
+
+Please feel free to contribute, report any issue, feature request or provide any feedback. Click [here](https://github.com/jucora/Doctor-Dev/issues)
+
+## Support
+
+Feel free to give a :star:. That would support me a lot.
