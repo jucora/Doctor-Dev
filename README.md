@@ -1,4 +1,4 @@
-# Doctor Dev
+<h1 align="center">:moneybag: Doctor Dev Project</h1>
 
 <p align="center">
   <img src="images/doctodev.png">
