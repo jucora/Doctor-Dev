@@ -15,7 +15,7 @@
 
 This project consists of an application for handling transactions. Users can create an account, create groups, and send transactions to other groups as a way of supporting the community. This is a capstone project called Group our transactions, which is part of the Microverse curriculum for the Ruby on Rails course.
 
-## How to run the game in a local environment
+## How to run the project in a local environment
 
 1. You can clone the repo by running the next command in your command line: <p><code> git clone https://github.com/jucora/Doctor-Dev.git </code></p>
 
